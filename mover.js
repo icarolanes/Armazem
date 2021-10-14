@@ -1,11 +1,8 @@
-<script>
 //Make the DIV element draggagle:
 dragElement(document.getElementById("mydiv"));
 
 function dragElement(elmnt) {
 	var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-	elmnt.style.top ="114px" ;
-	elmnt.style.left="8px";
 	if (document.getElementById(elmnt.id + "header")) {
 		/* if present, the header is where you move the DIV from:*/
 		document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
@@ -19,33 +16,44 @@ function dragElement(elmnt) {
 	function dragMouseDown(e) {
 		e = e || window.event;
 		e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
+		// get the mouse cursor position at startup:
+		pos3 = e.clientX;
+		pos4 = e.clientY;
+		document.onmouseup = closeDragElement;
+		// call a function whenever the cursor moves:
+		document.onmousemove = elementDrag;
+	}
+
+	function elementDrag(e) {
+		e = e || window.event;
+		e.preventDefault();
+		// calculate the new cursor position:
+		pos1 = pos3 - e.clientX;
+		pos2 = pos4 - e.clientY;
+		pos3 = e.clientX;
+		pos4 = e.clientY;
+		// set the element's new position:
+		elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+		elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+		console.log(style);
+	}
+
+	function closeDragElement() {
+		/* stop moving when mouse button is released:*/
+		document.onmouseup = null;
+		document.onmousemove = null;
+
+	}
 }
 
-function elementDrag(e) {
-	e = e || window.event;
-	e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-    console.log(style);
+class container {
+		constructor(id, tipo_id) {
+		this.id = id;
+		this.descricao = det_container(tipo_id);
+	}
 }
 
-function closeDragElement() {
-	/* stop moving when mouse button is released:*/
-	document.onmouseup = null;
-	document.onmousemove = null;
 
+function tipo_id(tipo_id){
+	
 }
-}
-</script>
