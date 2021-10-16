@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "descricao": "Container Dry Box 20 PÉS"
+    },
+    {
+        "id": "2",
+        "descricao": "Container Dry  Box 40 PÉS"
+    },
+    {
+        "id": "3",
+        "descricao": "Container High Cube 40 PÉS"
+    },
+    {
+        "id": "4",
+        "descricao": "Container Graneleiro Dry 20 PÉS"
+    },
+    {
+        "id": "5",
+        "descricao": "Container Flat Rack 20 e 40 PÉS"
+    },
+    {
+        "id": "6",
+        "descricao": "Container Tanque"
+    },
+    {
+        "id": "7",
+        "descricao": "Container Ventilado"
+    },
+    {
+        "id": "8",
+        "descricao": "Container Open Top 20 e 40 PÉS"
+    },
+    {
+        "id": "9",
+        "descricao": "Container Plataforma 20 e 40 PÉS"
+    },
+    {
+        "id": "10",
+        "descricao": "Container Reefer 20 e 40 PÉS"
+    }
+]
